@@ -21,13 +21,17 @@ public class App
     	WebDriver driver = new FirefoxDriver();
 		driver.get("http://www.facebook.com");
 		
-		if ( !checkLoginOnFacebook(driver) )
-		{
-			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-			WebElement aboutLink = driver.findElement(By.linkText("Înscrie-te pe Facebook"));
-			aboutLink.click();
-			checkSignInForm(driver);
-		}
+	
+		
+//		if ( !checkLoginOnFacebook(driver) )
+//		{
+//			
+//			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+//			WebElement aboutLink = driver.findElement(By.linkText("Înscrie-te pe Facebook"));
+//			aboutLink.click();
+//			checkSignInForm(driver);
+//		}
+		
 		// findElements -> pune intr-o lista toate elementele care indeplinesc
 		//    			conditiile dupa care cauta;
 //		List<WebElement> searchBox = driver.findElements(By.className("jsb"));
