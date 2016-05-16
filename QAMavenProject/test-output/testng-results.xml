@@ -2,54 +2,30 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18954" started-at="2016-05-13T11:22:10Z" finished-at="2016-05-13T11:22:29Z">
+  <suite name="Default suite" duration-ms="13544" started-at="2016-05-16T12:40:00Z" finished-at="2016-05-16T12:40:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18954" started-at="2016-05-13T11:22:10Z" finished-at="2016-05-13T11:22:29Z">
-      <class name="QATools.QAMavenProject.LoginTestOnIndexPage">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:QATools.QAMavenProject.LoginTestOnIndexPage@4f933fd1]" name="beforeMethod" is-config="true" duration-ms="2503" started-at="2016-05-13T13:22:07Z" finished-at="2016-05-13T13:22:10Z">
+    <test name="Default test" duration-ms="13544" started-at="2016-05-16T12:40:00Z" finished-at="2016-05-16T12:40:13Z">
+      <class name="QATools.QAMavenProject.SignUpTestOnIndexPage">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:QATools.QAMavenProject.SignUpTestOnIndexPage@4f933fd1]" name="beforeMethod" is-config="true" duration-ms="2495" started-at="2016-05-16T14:39:57Z" finished-at="2016-05-16T14:40:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="navigateToLogin()[pri:0, instance:QATools.QAMavenProject.LoginTestOnIndexPage@4f933fd1]" name="navigateToLogin" is-config="true" duration-ms="3874" started-at="2016-05-13T13:22:10Z" finished-at="2016-05-13T13:22:14Z">
+        <test-method status="PASS" signature="navigateToLogin()[pri:0, instance:QATools.QAMavenProject.SignUpTestOnIndexPage@4f933fd1]" name="navigateToLogin" is-config="true" duration-ms="9101" started-at="2016-05-16T14:40:00Z" finished-at="2016-05-16T14:40:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLogin -->
-        <test-method status="FAIL" signature="testLogin()[pri:0, instance:QATools.QAMavenProject.LoginTestOnIndexPage@4f933fd1]" name="testLogin" duration-ms="14766" started-at="2016-05-13T13:22:14Z" finished-at="2016-05-13T13:22:29Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="testSignUp()[pri:0, instance:QATools.QAMavenProject.SignUpTestOnIndexPage@4f933fd1]" name="testSignUp" duration-ms="4134" started-at="2016-05-16T14:40:09Z" finished-at="2016-05-16T14:40:13Z">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":".//*[@id='content']/div/div/div[1]/span"}
-Command duration or timeout: 10.04 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'C370012100085', ip: '172.30.141.100', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 0b2da509-897d-4605-950a-78f2f8934887
-*** Element info: {Using=xpath, value=.//*[@id='content']/div/div/div[1]/span}]]>
+              <![CDATA[null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":".//*[@id='content']/div/div/div[1]/span"}
-Command duration or timeout: 10.04 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'C370012100085', ip: '172.30.141.100', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 0b2da509-897d-4605-950a-78f2f8934887
-*** Element info: {Using=xpath, value=.//*[@id='content']/div/div/div[1]/span}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at QATools.QAMavenProject.LoginTestOnIndexPage.testLogin(LoginTestOnIndexPage.java:25)
+              <![CDATA[java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.assertNotEquals(Assert.java:831)
+	at org.testng.Assert.assertNotEquals(Assert.java:836)
+	at QATools.QAMavenProject.SignUpTestOnIndexPage.testSignUp(SignUpTestOnIndexPage.java:26)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -74,24 +50,17 @@ Session ID: 0b2da509-897d-4605-950a-78f2f8934887
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":".//*[@id='content']/div/div/div[1]/span"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'C370012100085', ip: '172.30.141.100', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/p3700650/AppData/Local/Temp/anonymous7220881191723356989webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/p3700650/AppData/Local/Temp/anonymous7220881191723356989webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:QATools.QAMavenProject.LoginTestOnIndexPage@4f933fd1]" name="afterMethod" is-config="true" duration-ms="294" started-at="2016-05-13T13:22:29Z" finished-at="2016-05-13T13:22:29Z">
+        </test-method> <!-- testSignUp -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:QATools.QAMavenProject.SignUpTestOnIndexPage@4f933fd1]" name="afterMethod" is-config="true" duration-ms="298" started-at="2016-05-16T14:40:13Z" finished-at="2016-05-16T14:40:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- QATools.QAMavenProject.LoginTestOnIndexPage -->
+      </class> <!-- QATools.QAMavenProject.SignUpTestOnIndexPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

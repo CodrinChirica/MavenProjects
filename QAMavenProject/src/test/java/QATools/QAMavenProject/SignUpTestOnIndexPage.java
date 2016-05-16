@@ -10,21 +10,22 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class LoginTestOnIndexPage {
+public class SignUpTestOnIndexPage {
 
-	public WebDriver driver;
+public WebDriver driver;
 	
 	
 	@Test
-	public void testLogin () throws InterruptedException {
+	public void testSignUp () throws InterruptedException {
 		
-		LoginAndSignUpPage loginpage = new LoginAndSignUpPage(driver);
-		loginpage.logIn("cody_cody2007@yahoo.com", "pass");
+		LoginAndSignUpPage logInAndSignUp = new LoginAndSignUpPage(driver);
+		logInAndSignUp.signUp("Gigel", "Ionel", "GigelIonel@gi.com", "GigelIonel@yahoo.com", "GigelIonel", "May", "9", "1994", "Male");
 		
-		LogIntoFacebookPage logIntoFacebook = new LogIntoFacebookPage(driver);
-//		LoginAndSignUpPage loginAndSignUpPage = new LoginAndSignUpPage(driver);
+//		ConfirmYourEmailAddressPage confirmForm = new ConfirmYourEmailAddressPage(driver);
 		
-		Assert.assertNotEquals(driver.findElement(By.xpath(".//*[@id='loginform']")), logIntoFacebook.getLogIntoFacebookForm(driver));;
+		Assert.assertNotEquals(driver.findElement(By.xpath(".//*[@id='reg_box']")), logInAndSignUp.getRegisterBox(driver));
+		
+//		logInAndSignUp.selectMonthForBirthday("Jun");
 	}
 	
 	
@@ -52,5 +53,6 @@ public class LoginTestOnIndexPage {
 		// Close the driver	  
 		driver.quit();
 	  }	
+	
 	
 }
