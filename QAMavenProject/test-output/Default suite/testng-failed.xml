@@ -3,19 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="QATools.QAMavenProject.SignUpTestOnIndexPage"/>
+      <class name="QATools.QAMavenProject.LoginTestOnIndexPage"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="QATools.QAMavenProject.SignUpTestOnIndexPage">
+      <class name="QATools.QAMavenProject.LoginTestOnIndexPage">
         <methods>
-          <include name="afterMethod"/>
-          <include name="beforeMethod"/>
           <include name="navigateToLogin"/>
-          <include name="testSignUp"/>
+          <include name="testLoginGoodPasswd"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- QATools.QAMavenProject.SignUpTestOnIndexPage -->
+      </class> <!-- QATools.QAMavenProject.LoginTestOnIndexPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

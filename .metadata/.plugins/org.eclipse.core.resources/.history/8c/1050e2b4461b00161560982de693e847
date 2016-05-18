@@ -1,0 +1,70 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
+public class LogIntoFacebookPage {
+	// this is the page were Facebook redirects you after you introduced wrong credentials
+
+	private WebDriver driver;
+	
+//	WebElement emailFieldToLogin = driver.findElement(By.xpath("//input[@id='email']"));
+//	WebElement passwordFieldToLogin = driver.findElement(By.xpath("//input[@id='pass']"));
+//	WebElement loginButton = driver.findElement(By.xpath(".//*[@id='loginbutton']"));
+//	WebElement logIntoFacebookForm = driver.findElement(By.xpath(".//*[@id='loginform']"));
+//	
+	public LogIntoFacebookPage(WebDriver driver) {
+		// TODO Auto-generated constructor stub		
+		this.setDriver(driver);
+		PageFactory.initElements(driver, this);
+
+	}
+	
+	
+	
+	// getter 
+	public WebDriver getDriver() {
+		return driver;
+	}
+	
+	// setter
+	public void setDriver(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public WebElement getLogIntoFacebookForm (WebDriver driver){
+		return driver.findElement(By.xpath(".//*[@id='loginform']"));
+//				logIntoFacebookForm;
+	}
+//	
+	@BeforeSuite
+	  public void beforeMethod() {		
+		  
+		// Create a new instance of the Firefox driver
+		FirefoxProfile profile = new FirefoxProfile();
+	    profile.setPreference("intl.accept_languages", "en-au");
+	    driver =  new FirefoxDriver(profile);
+		
+	  }
+	  
+	  @BeforeMethod
+	  public void navigateToLogin()
+	  {
+		//Launch the  Website
+		driver.get("https://www.facebook.com/login.php");
+	  }	  
+	  
+	  @AfterMethod
+	  public void afterMethod() {
+		  
+		// Close the driver	  
+		driver.quit();
+	  }	
+}

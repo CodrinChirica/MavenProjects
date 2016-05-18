@@ -1,9 +1,7 @@
 package QATools.QAMavenProject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -14,26 +12,21 @@ public class LogIntoFacebookPage {
 	
 	public LogIntoFacebookPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub		
-		this.setDriver(driver);
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
 	}
 	
-	@FindBy(how = How.XPATH, using = ".//*[@id='loginform']")
-	private WebElement logIntoFacebookForm;
-	
-	// getter 
-	public WebDriver getDriver() {
-		return driver;
+	public Boolean isLogIntoFacebookFormDisplayed(){
+		
+		
+		try {
+			driver.findElement(By.xpath(".//*[@id='loginform']"));
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return false;
+		}
 	}
-	
-	// setter
-	public void setDriver(WebDriver driver) {
-		this.driver = driver;
-	}
-	
-	public WebElement getLogIntoFacebookForm (WebDriver driver){
-		return logIntoFacebookForm;
-	}
-
 }

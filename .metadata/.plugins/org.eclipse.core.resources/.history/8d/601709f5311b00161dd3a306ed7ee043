@@ -1,0 +1,6 @@
+package QATools.QAMavenProject;
+
+public class LogIntoFacebookPage {
+	// this is the page were Facebook redirects you after you introduced wrong credentials
+
+}

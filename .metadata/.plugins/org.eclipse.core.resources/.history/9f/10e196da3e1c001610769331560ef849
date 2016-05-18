@@ -1,0 +1,52 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+public class LoginTestOnIndexPage extends AbstractLoginTestOnIndexPage {
+
+	
+
+//	@Test
+//	public void testLoginWrongPasswd () {
+//		
+//		LoginAndSignUpPage loginpage = new LoginAndSignUpPage(driver);
+//		try {
+//			loginpage.logIn("cody_cody2007@yahoo.com", "asd");
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		LogIntoFacebookPage logIntoFacebook = new LogIntoFacebookPage(driver);
+//		Boolean result = logIntoFacebook.isLogIntoFacebookFormDisplayed();
+//		
+//		Assert.assertEquals(true, result.booleanValue());
+//	}
+	
+	
+	@Test
+	public void testLoginGoodPasswd () {
+		
+		LoginAndSignUpPage loginpage = new LoginAndSignUpPage(driver);
+		try {
+			loginpage.logIn("cody_cody2007@yahoo.com", "wrongPassAgain");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		LogIntoFacebookPage logIntoFacebook = new LogIntoFacebookPage(driver);
+		Boolean result = logIntoFacebook.isLogIntoFacebookFormDisplayed();
+		
+		Assert.assertEquals(false, result.booleanValue());
+	}
+	
+	
+}

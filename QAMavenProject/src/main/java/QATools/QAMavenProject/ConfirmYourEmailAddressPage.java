@@ -1,35 +1,28 @@
 package QATools.QAMavenProject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
 public class ConfirmYourEmailAddressPage {
 
 	private WebDriver driver;
 	
-	public ConfirmYourEmailAddressPage(WebDriver driver){
-		this.setDriver(driver);
-		PageFactory.initElements(driver, this);
-	}
 	
-	// getter 
-	public WebDriver getDriver() {
-		return driver;
-	}
-		
-	// setter
-	public void setDriver(WebDriver driver) {
+	public ConfirmYourEmailAddressPage(WebDriver driver){
 		this.driver = driver;
 	}
-
-	@FindBy(how = How.XPATH, using = ".//*[@id='confirm_center']/div")
-	private WebElement confirmYourEmailAddressForm;
-		
 	
-	public WebElement getConfirmYourEmailAddressForm (){
-		return confirmYourEmailAddressForm;
+	
+	public Boolean isConfirmYourEmailAddressFormDisplayed () {
+		
+		try {
+			driver.findElement(By.xpath(".//*[@id='confirm_center']/div"));
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return false;
+		}
+		
 	}
 }

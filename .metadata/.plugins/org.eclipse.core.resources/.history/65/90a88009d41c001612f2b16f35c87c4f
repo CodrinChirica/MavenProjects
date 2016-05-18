@@ -1,0 +1,3 @@
+# File to configure browser driver and URL to navigate to
+browser = Chrome
+url = https://www.facebook.com/

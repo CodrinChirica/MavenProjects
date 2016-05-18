@@ -1,0 +1,17 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class LogIntoFacebookPage {
+	// this is the page were Facebook redirects you after you introduced wrong credentials
+
+	private WebDriver driver;
+	
+	WebElement emailFieldToLogin = driver.findElement(By.xpath("//input[@id='email']"));
+	WebElement passwordFieldToLogin = driver.findElement(By.xpath("//input[@id='pass']"));
+	WebElement loginButton = driver.findElement(By.xpath(".//*[@id='loginbutton']"));
+	
+	
+}

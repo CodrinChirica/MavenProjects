@@ -1,0 +1,71 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class LoginTestOnIndexPage {
+
+	public WebDriver driver;
+	
+
+	
+	@BeforeSuite
+	  public void beforeSuite() {		
+		  
+		// Create a new instance of the Firefox driver
+		FirefoxProfile profile = new FirefoxProfile();
+	    profile.setPreference("intl.accept_languages", "en-au");
+	    driver =  new FirefoxDriver(profile);
+		
+	  }
+	  
+	  @BeforeTest
+	  public void navigateToLogin()
+	  {
+		//Launch the  Website
+		driver.get("https://www.facebook.com");
+	  }	  
+	  
+	
+	@Test(priority=1)
+	public void testLoginWrongPasswd () throws InterruptedException {
+		
+		LoginAndSignUpPage loginpage = new LoginAndSignUpPage(driver);
+		loginpage.logIn("cody_cody2007@yahoo.com", "asd");
+		
+		LogIntoFacebookPage logIntoFacebook = new LogIntoFacebookPage(driver);
+		Boolean result = logIntoFacebook.isLogIntoFacebookFormDisplayed();
+		
+		Assert.assertEquals(true, result.booleanValue());
+	}
+	
+	
+	@Test(priority=2)
+	public void testLoginGoodPasswd () throws InterruptedException {
+		
+		LoginAndSignUpPage loginpage = new LoginAndSignUpPage(driver);
+		loginpage.logIn("cody_cody2007@yahoo.com", "invata!");
+		
+		LogIntoFacebookPage logIntoFacebook = new LogIntoFacebookPage(driver);
+		Boolean result = logIntoFacebook.isLogIntoFacebookFormDisplayed();
+		
+		Assert.assertEquals(false, result.booleanValue());
+	}
+	
+	
+	  @AfterMethod
+	  public void afterTest() {
+		  
+		// Close the driver	  
+		driver.quit();
+	  }	
+	
+}

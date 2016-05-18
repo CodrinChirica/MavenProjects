@@ -1,0 +1,50 @@
+package QATools.QAMavenProject;
+
+import javax.swing.filechooser.FileSystemView;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class LoginTestOnIndexPage extends AbstractLoginTestOnIndexPage {
+
+	
+
+	@Test(priority = 1)
+	public void testLoginWrongPasswd () {
+		
+		LoginAndSignUpPage loginpage = new LoginAndSignUpPage(driver);
+		System.out.println(FileSystemView.getFileSystemView().getRoots()[0]);
+		System.out.println(loginpage.getURLFromConfigFile());
+		try {
+			loginpage.logIn("cody_cody2007@yahoo.com", "asd");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		LogIntoFacebookPage logIntoFacebook = new LogIntoFacebookPage(driver);
+		Boolean result = logIntoFacebook.isLogIntoFacebookFormDisplayed();
+		
+		Assert.assertEquals(true, result.booleanValue());
+	}
+	
+	
+	@Test (priority = 2)
+	public void testLoginGoodPasswd () {
+		
+		LoginAndSignUpPage loginpage = new LoginAndSignUpPage(driver);
+		try {
+			loginpage.logIn("cody_cody2007@yahoo.com", "WrongPass");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		LogIntoFacebookPage logIntoFacebook = new LogIntoFacebookPage(driver);
+		Boolean result = logIntoFacebook.isLogIntoFacebookFormDisplayed();
+		
+		Assert.assertEquals(false, result.booleanValue());
+	}
+	
+	
+}

@@ -1,0 +1,24 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.WebDriver;
+
+public class ConfirmYourEmailAddressPage {
+
+	private WebDriver driver;
+	
+	public ConfirmYourEmailAddressPage(WebDriver driver){
+		this.setDriver(driver);
+		
+	}
+	
+	// getter 
+		public WebDriver getDriver() {
+			return driver;
+		}
+		
+		// setter
+		public void setDriver(WebDriver driver) {
+			this.driver = driver;
+		}
+	
+}

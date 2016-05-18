@@ -1,0 +1,41 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
+public class AbstractLoginTestOnIndexPage {
+
+	public WebDriver driver;
+
+	
+	@BeforeSuite
+	  public void beforeSuite() {		
+		  
+		// Create a new instance of the Firefox driver
+		FirefoxProfile profile = new FirefoxProfile();
+	    profile.setPreference("intl.accept_languages", "en-au");
+	    driver =  new FirefoxDriver(profile);
+		
+	  }
+	  
+	  @BeforeMethod
+	  public void navigateToLogin()
+	  {
+		//Launch the  Website
+		driver.get("https://www.facebook.com");
+	  }	
+	
+	  
+
+	  @AfterSuite
+	  public void afterTest() {
+		  
+		// Close the driver	  
+		driver.quit();
+	  }	
+	
+}

@@ -1,31 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13544" started-at="2016-05-16T12:40:00Z" finished-at="2016-05-16T12:40:13Z">
+  <suite name="Default suite" duration-ms="7610" started-at="2016-05-18T08:42:39Z" finished-at="2016-05-18T08:42:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13544" started-at="2016-05-16T12:40:00Z" finished-at="2016-05-16T12:40:13Z">
-      <class name="QATools.QAMavenProject.SignUpTestOnIndexPage">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:QATools.QAMavenProject.SignUpTestOnIndexPage@4f933fd1]" name="beforeMethod" is-config="true" duration-ms="2495" started-at="2016-05-16T14:39:57Z" finished-at="2016-05-16T14:40:00Z">
+    <test name="Default test" duration-ms="7610" started-at="2016-05-18T08:42:39Z" finished-at="2016-05-18T08:42:47Z">
+      <class name="QATools.QAMavenProject.LoginTestOnIndexPage">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:QATools.QAMavenProject.LoginTestOnIndexPage@548a9f61]" name="beforeSuite" is-config="true" duration-ms="3017" started-at="2016-05-18T10:42:36Z" finished-at="2016-05-18T10:42:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="navigateToLogin()[pri:0, instance:QATools.QAMavenProject.SignUpTestOnIndexPage@4f933fd1]" name="navigateToLogin" is-config="true" duration-ms="9101" started-at="2016-05-16T14:40:00Z" finished-at="2016-05-16T14:40:09Z">
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="navigateToLogin()[pri:0, instance:QATools.QAMavenProject.LoginTestOnIndexPage@548a9f61]" name="navigateToLogin" is-config="true" duration-ms="2775" started-at="2016-05-18T10:42:39Z" finished-at="2016-05-18T10:42:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToLogin -->
-        <test-method status="FAIL" signature="testSignUp()[pri:0, instance:QATools.QAMavenProject.SignUpTestOnIndexPage@4f933fd1]" name="testSignUp" duration-ms="4134" started-at="2016-05-16T14:40:09Z" finished-at="2016-05-16T14:40:13Z">
+        <test-method status="PASS" signature="testLoginWrongPasswd()[pri:1, instance:QATools.QAMavenProject.LoginTestOnIndexPage@548a9f61]" name="testLoginWrongPasswd" duration-ms="3164" started-at="2016-05-18T10:42:42Z" finished-at="2016-05-18T10:42:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginWrongPasswd -->
+        <test-method status="PASS" signature="navigateToLogin()[pri:0, instance:QATools.QAMavenProject.LoginTestOnIndexPage@548a9f61]" name="navigateToLogin" is-config="true" duration-ms="734" started-at="2016-05-18T10:42:45Z" finished-at="2016-05-18T10:42:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToLogin -->
+        <test-method status="FAIL" signature="testLoginGoodPasswd()[pri:2, instance:QATools.QAMavenProject.LoginTestOnIndexPage@548a9f61]" name="testLoginGoodPasswd" duration-ms="927" started-at="2016-05-18T10:42:46Z" finished-at="2016-05-18T10:42:47Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[null]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: null
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.assertNotEquals(Assert.java:831)
-	at org.testng.Assert.assertNotEquals(Assert.java:836)
-	at QATools.QAMavenProject.SignUpTestOnIndexPage.testSignUp(SignUpTestOnIndexPage.java:26)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:305)
+	at org.testng.Assert.assertEquals(Assert.java:315)
+	at QATools.QAMavenProject.LoginTestOnIndexPage.testLoginGoodPasswd(LoginTestOnIndexPage.java:44)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -55,12 +66,12 @@
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSignUp -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:QATools.QAMavenProject.SignUpTestOnIndexPage@4f933fd1]" name="afterMethod" is-config="true" duration-ms="298" started-at="2016-05-16T14:40:13Z" finished-at="2016-05-16T14:40:13Z">
+        </test-method> <!-- testLoginGoodPasswd -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:QATools.QAMavenProject.LoginTestOnIndexPage@548a9f61]" name="afterTest" is-config="true" duration-ms="345" started-at="2016-05-18T10:42:47Z" finished-at="2016-05-18T10:42:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- QATools.QAMavenProject.SignUpTestOnIndexPage -->
+        </test-method> <!-- afterTest -->
+      </class> <!-- QATools.QAMavenProject.LoginTestOnIndexPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

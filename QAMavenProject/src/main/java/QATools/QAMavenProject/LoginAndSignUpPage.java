@@ -1,5 +1,6 @@
 package QATools.QAMavenProject;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +12,8 @@ public class LoginAndSignUpPage {
 
 	private WebDriver driver;
 
+	
+//	 elements for Log In form
 
 	@FindBy(how = How.XPATH, using = ".//*[@id='email']")
 	private WebElement emailFieldToLogin;
@@ -23,54 +26,12 @@ public class LoginAndSignUpPage {
 	
 	@FindBy(how = How.XPATH, using = ".//*[@id='reg_box']")
 	private WebElement registerBoxOnIndexPage;
-	
-	public LoginAndSignUpPage(WebDriver driver) {
-		// TODO Auto-generated constructor stub		
-		this.setDriver(driver);
-		PageFactory.initElements(driver, this);
-	}
-	
-	// getter 
-	public WebDriver getDriver() {
-		return driver;
-	}
-	
-	// setter
-	public void setDriver(WebDriver driver) {
-		this.driver = driver;
-	}
-	
-	
-	
-	// submit email to login on the first page 
-	public void inputEmailToLogin(String emailAddress) throws InterruptedException {
-		emailFieldToLogin.sendKeys(emailAddress);
-	
-	}
-	
-	//public passwd to login on the first page
-	public void inputPasswordToLogin(String password) throws InterruptedException {
-		passwordFieldToLogin.sendKeys(password);
-	}
-	
-	// click on Log In button 
-	public void clickLogInButton () throws InterruptedException {
-		
-//		driver.findElement(By.xpath(".//*[@id='loginbutton']")).click();
-		loginButton.click();
 
-	}
-	
-	// check login 
-	public void logIn( String emailAddress, String password) throws InterruptedException{
-		
-		inputEmailToLogin(emailAddress);
-		inputPasswordToLogin(password);
-		clickLogInButton();
-		
-	}
+//	 ----end elements for Log In form
 	
 	
+	// elements for Sign Up Form 
+
 	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[1]/div[1]")
 	private WebElement firstNameForSignUpField;
 	
@@ -103,6 +64,56 @@ public class LoginAndSignUpPage {
 	
 	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[8]/button")
 	private WebElement signUpButton;
+	
+	// --- end elements for Sign Up Form
+	
+	
+
+	// elements that proves tests failed
+	@FindBy(how = How.XPATH, using = ".//*[@id='js_16']")
+	private WebElement errorWarningFirstNameForSignUpField;
+	
+	// ---- end elements list
+	
+	
+	public LoginAndSignUpPage(WebDriver driver) {
+		// TODO Auto-generated constructor stub		
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	// --------------------------------------- Begin Sign In Tests --------------------------------------
+	
+	
+	// submit email to login on the first page 
+	public void inputEmailToLogin(String emailAddress) throws InterruptedException {
+		emailFieldToLogin.sendKeys(emailAddress);
+	
+	}
+	
+	//public passwd to login on the first page
+	public void inputPasswordToLogin(String password) throws InterruptedException {
+		passwordFieldToLogin.sendKeys(password);
+	}
+	
+	// click on Log In button 
+	public void clickLogInButton () throws InterruptedException {
+		
+//		driver.findElement(By.xpath(".//*[@id='loginbutton']")).click();
+		loginButton.click();
+
+	}
+	
+	// check login 
+	public void logIn( String emailAddress, String password) throws InterruptedException{
+		
+		inputEmailToLogin(emailAddress);
+		inputPasswordToLogin(password);
+		clickLogInButton();
+		
+	}
+	
+	// --------------------------------------- Begin Sign Up Tests --------------------------------------
 	
 	public void inputFirstNameOnSignUp( String firstName){
 		
@@ -184,4 +195,20 @@ public class LoginAndSignUpPage {
 	public WebElement getRegisterBox (WebDriver driver){
 		return registerBoxOnIndexPage;
 	}
+	
+	
+	public WebElement returnErrorWarningFirstNameForSignUpField(){
+		
+		try {
+			return errorWarningFirstNameForSignUpField;		
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 }
+
+
