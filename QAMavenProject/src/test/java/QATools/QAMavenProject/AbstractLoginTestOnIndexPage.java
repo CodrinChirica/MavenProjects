@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -28,6 +29,14 @@ public class AbstractLoginTestOnIndexPage {
 //	    profile.setPreference("intl.accept_languages", "en-au");
 //	    driver =  new FirefoxDriver(profile);
 		parseConfigFile();
+		
+	  }
+	  
+	 
+	@BeforeMethod
+	  public void navigateToLogin()
+	  {
+		
 		switch (browser) {
 		case "Firefox":
 			FirefoxProfile profile = new FirefoxProfile();
@@ -40,21 +49,16 @@ public class AbstractLoginTestOnIndexPage {
 			driver = new ChromeDriver();
 			break;
 
-		default: throw new IllegalArgumentException("Invalid browser (Firefox, Chrome, Internet Explorer): " + browser);
+		default: throw new IllegalArgumentException("Invalid browser (Firefox, Chrome): " + browser);
 		}
-//		
-	  }
-	  
-	 
-	@BeforeMethod
-	  public void navigateToLogin()
-	  {
-		//Launch the  Website
-//		driver.get("https://www.facebook.com");
+		
 		
 		switch (url) {
 		case "https://www.facebook.com/":
 			driver.get("https://www.facebook.com/");
+			break;
+		case "https://the-internet.herokuapp.com/":
+			driver.get("https://the-internet.herokuapp.com/");
 			break;
 		
 		default: throw new IllegalArgumentException("Invalid URL (Facebook): " + url);
@@ -95,9 +99,14 @@ public class AbstractLoginTestOnIndexPage {
 		}
 
 	}
+	
+	@AfterMethod
+	public void afterEachTest() {
+		driver.close();
+	}
 
 	  @AfterSuite
-	  public void afterTest() {
+	  public void afterTestSuite() {
 		  
 		// Close the driver	  
 		driver.quit();

@@ -1,0 +1,56 @@
+package QATools.QAMavenProject;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+public class TI_CheckboxesPage {
+
+	private WebDriver driver;
+	
+	@FindBy(how = How.XPATH, using = ".//*[@id='checkboxes']/input[1]")
+	private WebElement checkBox1;	
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='checkboxes']/input[2]")
+	private WebElement checkBox2;
+	
+	
+	public TI_CheckboxesPage(WebDriver driver) {
+		// TODO Auto-generated constructor stub		
+		this.driver = driver;
+	}
+	
+	public void checkTheFirstCheckbox() {
+	
+		checkBox1.click();		
+	}
+
+	public void checkTheSecondCheckbox() {
+	
+		checkBox2.click();		
+	}
+	
+	public void checkAllCheckboxes() {
+		
+		if ( !checkBox1.isSelected() )
+			checkTheFirstCheckbox();
+		if ( !checkBox1.isSelected() )
+			checkTheSecondCheckbox();
+	}
+	
+	public Boolean isCheckboxesPageDipsplayed() {
+		
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		
+		try {
+			driver.findElement(By.xpath(".//*[@id='checkboxes']"));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+}

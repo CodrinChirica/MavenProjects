@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class LoginAndSignUpPage {
 
+	@SuppressWarnings("unused")
 	private WebDriver driver;
 
 	
@@ -32,19 +33,19 @@ public class LoginAndSignUpPage {
 	
 	// elements for Sign Up Form 
 
-	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[1]/div[1]")
+	@FindBy(how = How.XPATH, using = ".//div[contains(@class, 'placeholder') and text()='First name']")
 	private WebElement firstNameForSignUpField;
 	
-	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[1]/div[2]")
+	@FindBy(how = How.XPATH, using = ".//div[contains(@class, 'placeholder') and text()='Last name']")
 	private WebElement lastNameForSignUpField;
 	
-	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[2]")
+	@FindBy(how = How.XPATH, using = ".//div[contains(@class, 'placeholder') and text()='Mobile number or email']")
 	private WebElement emailForSignUpField;
 	
-	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[3]")
+	@FindBy(how = How.XPATH, using = ".//div[contains(@class, 'placeholder') and text()='Re-enter mobile number or email']")
 	private WebElement re_enterEmailForSignUpField;
 	
-	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[4]")
+	@FindBy(how = How.XPATH, using = ".//div[contains(@class, 'placeholder') and text()='New password']")
 	private WebElement passwordForSignUpField;
 	
 	@FindBy(how = How.XPATH, using = ".//*[@id='month']")
@@ -56,13 +57,13 @@ public class LoginAndSignUpPage {
 	@FindBy(how = How.XPATH, using = ".//*[@id='year']")
 	private Select yearBirthdayDropdown;
 	
-	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[6]/span[1]/span[2]/input")
+	@FindBy(how = How.XPATH, using = ".//input[@type='radio'][following-sibling::*/text()='Male']")
 	private WebElement genderMaleRadioButton;
 	
-	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[6]/span[1]/span[1]/input")
+	@FindBy(how = How.XPATH, using = ".//input[@type='radio'][following-sibling::*/text()='Female']")
 	private WebElement genderFemaleRadioButton;
 	
-	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']/div[8]/button")
+	@FindBy(how = How.XPATH, using = ".//*[@id='reg_form_box']//button[@type='submit']")
 	private WebElement signUpButton;
 	
 	// --- end elements for Sign Up Form
@@ -70,7 +71,7 @@ public class LoginAndSignUpPage {
 	
 
 	// elements that proves tests failed
-	@FindBy(how = How.XPATH, using = ".//*[@id='js_16']")
+	@FindBy(how = How.XPATH, using = ".//div[contains(@class, 'uiContextualLayer uiContextualLayerLeft') and text()='What’s your name?']")  
 	private WebElement errorWarningFirstNameForSignUpField;
 	
 	// ---- end elements list

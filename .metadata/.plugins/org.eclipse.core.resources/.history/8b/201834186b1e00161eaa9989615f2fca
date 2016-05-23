@@ -1,0 +1,34 @@
+package QATools.QAMavenProject;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class TI_TestDragAndDropPage extends AbstractLoginTestOnIndexPage{
+	
+
+	@BeforeMethod
+	public void goToCheckboxesPage() {
+		driver.get("https://the-internet.herokuapp.com/drag_and_drop");
+		
+	}
+	
+	@Test
+	public void testColumnAOverB() {
+				
+		TI_DragAndDropPage testColumnAOverB = new TI_DragAndDropPage(driver);
+		Boolean checkboxesStatus = false;
+
+		if ( testCheckedAllCheckboxes.isCheckboxesPageDipsplayed() ) {
+			testCheckedAllCheckboxes.checkAllCheckboxes();
+		
+			if (testCheckedAllCheckboxes.isCheckbox1Checked() && testCheckedAllCheckboxes.isCheckbox2Checked() )
+				checkboxesStatus = true;
+		}		
+		
+		
+		Assert.assertEquals(checkboxesStatus.booleanValue(), true);
+	}
+	
+	
+}

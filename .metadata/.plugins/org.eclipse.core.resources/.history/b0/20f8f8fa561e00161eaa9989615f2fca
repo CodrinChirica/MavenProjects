@@ -1,0 +1,20 @@
+package QATools.QAMavenProject;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class TI_TestTheInternetHomepage extends AbstractLoginTestOnIndexPage {
+
+	
+	@Test
+	public void checkLingGoToCheckboxesPage () {
+		
+		TI_TheInternetHomepage theInternetHomepage = new TI_TheInternetHomepage(driver);
+		theInternetHomepage.goToCheckboxesPage();
+		
+		TI_CheckboxesPage checkboxesPage = new TI_CheckboxesPage(driver);
+		Boolean checkboxesPageDisplayed = checkboxesPage.isCheckboxesPageDipsplayed(); 
+		
+		Assert.assertEquals( checkboxesPageDisplayed.booleanValue(), true);
+	}
+}

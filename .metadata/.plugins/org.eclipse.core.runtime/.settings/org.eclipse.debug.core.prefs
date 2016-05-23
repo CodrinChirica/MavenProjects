@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="column1Header.getText()"/>\r\n<expression enabled\="true" text\="column2Header.getText()"/>\r\n<expression enabled\="true" text\="dropdownList.getSelectedDropdownOption()"/>\r\n<expression enabled\="true" text\="optionForDropdown.selectByVisibleText( option )"/>\r\n<expression enabled\="true" text\="column1.getText()"/>\r\n</watchExpressions>\r\n

@@ -1,0 +1,4 @@
+# File to configure browser driver and URL to navigate to
+browser = Firefox
+#url = https://www.facebook.com/
+url = https://the-internet.herokuapp.com/

@@ -1,0 +1,24 @@
+package QATools.QAMavenProject;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class TI_DragAndDropPage {
+	
+	private WebDriver driver;
+	
+	
+	public Boolean isDragAndDropPageDipsplayed() {
+		
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		
+		try {
+			driver.findElement(By.xpath(".//*[@id='checkboxes']"));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+}

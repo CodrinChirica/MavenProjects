@@ -1,0 +1,42 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+public class TI_CheckboxesPage {
+
+	@SuppressWarnings("unused")
+	private WebDriver driver;
+	
+	@FindBy(how = How.XPATH, using = ".//*[@id='checkboxes']/input[1]")
+	private WebElement checkBox1;	
+
+	@FindBy(how = How.XPATH, using = ".//*[@id='checkboxes']/input[2]")
+	private WebElement checkBox2;
+	
+	
+	public TI_CheckboxesPage(WebDriver driver) {
+		// TODO Auto-generated constructor stub		
+		this.driver = driver;
+	}
+	
+	public void checkTheFirstCheckbox() {
+	
+		checkBox1.click();		
+	}
+
+	public void checkTheSecondCheckbox() {
+	
+		checkBox2.click();		
+	}
+	
+	public void checkAllCheckboxes() {
+		
+		checkTheFirstCheckbox();
+		checkTheSecondCheckbox();
+	}
+	
+	public Boolean isCheckboxesPageDipsplayed
+}

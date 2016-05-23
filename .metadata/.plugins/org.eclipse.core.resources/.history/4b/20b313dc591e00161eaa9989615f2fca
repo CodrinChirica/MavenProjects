@@ -1,0 +1,12 @@
+package QATools.QAMavenProject;
+
+import org.testng.annotations.BeforeMethod;
+
+public class TI_TestCheckboxesPage extends AbstractLoginTestOnIndexPage {
+
+	
+	@BeforeMethod
+	public void goToCheckboxesPage() {
+		driver.get("https://the-internet.herokuapp.com/checkboxes");
+	}
+}

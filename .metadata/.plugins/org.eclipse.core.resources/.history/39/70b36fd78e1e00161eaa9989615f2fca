@@ -1,0 +1,51 @@
+package QATools.QAMavenProject;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+public class TI_DropdownListPage {
+
+	private WebDriver driver;
+
+//	@FindBy(how = How.XPATH, using = ".//*[@id='dropdown']")
+//	private Select optionForDropdown;
+	
+	public TI_DropdownListPage(WebDriver driver) {		
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void selectOptionForDropdown (String option) {
+		
+		Select select = new Select(driver.findElement(By.xpath(".//*[@id='dropdown']")));
+		select.deselectAll();
+		select.selectByVisibleText(option);
+		System.out.println( option + " , " + select.getFirstSelectedOption());
+//		optionForDropdown.selectByVisibleText( option );
+	}
+	
+	public String getSelectedDropdownOption () {
+		Select select = new Select(driver.findElement(By.xpath(".//*[@id='dropdown']")));
+		return select.getFirstSelectedOption()).toString();
+//		return optionForDropdown.getFirstSelectedOption().getText();
+	}
+	
+	public Boolean isDropdownListPageDipsplayed() {
+		
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		
+		try {
+			driver.findElement(By.xpath(".//*[@id='content']"));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+}

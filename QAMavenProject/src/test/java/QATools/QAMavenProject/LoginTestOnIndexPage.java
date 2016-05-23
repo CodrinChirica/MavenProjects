@@ -8,17 +8,12 @@ public class LoginTestOnIndexPage extends AbstractLoginTestOnIndexPage {
 
 	
 
-	@Test(priority = 1)
-	public void testLoginWrongPasswd () {
+	@Test
+	public void testLoginWrongPasswd () throws InterruptedException {
 		
 		LoginAndSignUpPage loginpage = new LoginAndSignUpPage(driver);
 		
-		try {
-			loginpage.logIn("cody_cody2007@yahoo.com", "asd");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		loginpage.logIn("nesstest@ness.com", "asd");
 		
 		LogIntoFacebookPage logIntoFacebook = new LogIntoFacebookPage(driver);
 		Boolean result = logIntoFacebook.isLogIntoFacebookFormDisplayed();
@@ -27,16 +22,11 @@ public class LoginTestOnIndexPage extends AbstractLoginTestOnIndexPage {
 	}
 	
 	
-	@Test (priority = 2)
-	public void testLoginGoodPasswd () {
+	@Test 
+	public void testLoginGoodPasswd () throws InterruptedException {
 		
 		LoginAndSignUpPage loginpage = new LoginAndSignUpPage(driver);
-		try {
-			loginpage.logIn("cody_cody2007@yahoo.com", "WrongPass");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			loginpage.logIn("nesstest@ness.com", "nesstest");
 		
 		LogIntoFacebookPage logIntoFacebook = new LogIntoFacebookPage(driver);
 		Boolean result = logIntoFacebook.isLogIntoFacebookFormDisplayed();

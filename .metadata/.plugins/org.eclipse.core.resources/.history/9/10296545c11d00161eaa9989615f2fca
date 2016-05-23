@@ -1,0 +1,15 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.WebDriver;
+
+public class TheInternetHomepage {
+
+	private WebDriver driver;
+	
+	public TheInternetHomepage(WebDriver driver) {
+		// TODO Auto-generated constructor stub		
+		this.driver = driver;
+
+	}
+	
+}

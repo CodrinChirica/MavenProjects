@@ -1,0 +1,51 @@
+package QATools.QAMavenProject;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class TI_TestCheckboxesPage extends AbstractLoginTestOnIndexPage {
+
+	
+	@BeforeMethod
+	public void goToCheckboxesPage() {
+		driver.get("https://the-internet.herokuapp.com/checkboxes");
+		
+	}
+	
+	@Test
+	public void testCheckedAllCheckboxes() {
+				
+		TI_CheckboxesPage testCheckedAllCheckboxes = new TI_CheckboxesPage(driver);
+		Boolean checkboxesStatus = false;
+
+		if ( testCheckedAllCheckboxes.isCheckboxesPageDipsplayed() ) {
+			testCheckedAllCheckboxes.checkAllCheckboxes();
+		
+			if (testCheckedAllCheckboxes.isCheckbox1Checked() && testCheckedAllCheckboxes.isCheckbox2Checked() )
+				checkboxesStatus = true;
+		}		
+		
+		
+		Assert.assertEquals(checkboxesStatus.booleanValue(), true);
+	}
+	
+	
+	@Test
+	public void testUnCheckedAllCheckboxes() {
+				
+		TI_CheckboxesPage testUnCheckedAllCheckboxes = new TI_CheckboxesPage(driver);
+		Boolean unCheckboxesStatus = false;
+
+		if ( testUnCheckedAllCheckboxes.isCheckboxesPageDipsplayed() ) {
+			testUnCheckedAllCheckboxes.unCheckAllCheckboxes();
+		
+			if (testUnCheckedAllCheckboxes.isCheckbox1Checked() || testUnCheckedAllCheckboxes.isCheckbox2Checked() )
+				unCheckboxesStatus = true;
+		}		
+		
+		
+		Assert.assertEquals(checkboxesStatus.booleanValue(), false);
+	}
+	
+}

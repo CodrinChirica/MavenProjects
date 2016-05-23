@@ -1,0 +1,15 @@
+package QATools.QAMavenProject;
+
+import org.testng.annotations.Test;
+
+public class TI_TestTheInternetHomepage extends AbstractLoginTestOnIndexPage {
+
+	
+	@Test
+	public void checkLingGoToCheckboxesPage () {
+		
+		TI_TheInternetHomepage checkboxesPage = new TI_TheInternetHomepage(driver);
+		checkboxesPage.goToCheckboxesPage();
+		
+	}
+}
