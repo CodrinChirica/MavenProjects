@@ -23,6 +23,9 @@ public class TI_TheInternetHomepage {
 	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "File Download")
 	private WebElement fileDownloadPage;
 	
+	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Key Presses")
+	private WebElement keyPressesPage;
+	
 	public TI_TheInternetHomepage(WebDriver driver) {
 		// TODO Auto-generated constructor stub		
 		this.driver = driver;
@@ -34,6 +37,9 @@ public class TI_TheInternetHomepage {
 		checkboxesPage.click();
 	}
 	
+	public void goToKeyPressesPage() {
+		keyPressesPage.click();
+	}
 
 	public void goToDragAndDropPage() {
 		dragAndDropPage.click();

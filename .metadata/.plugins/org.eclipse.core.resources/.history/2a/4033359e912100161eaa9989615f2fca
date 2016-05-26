@@ -1,0 +1,39 @@
+package QATools.QAMavenProject;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.testng.annotations.BeforeMethod;
+
+public class TI_TestOpenAWindowPage extends AbstractLoginTestOnIndexPage{
+
+	
+	@BeforeMethod
+	public void goToOpenWindowPage() {
+		driver.get("https://the-internet.herokuapp.com/windows");		
+	}
+	
+	@Test
+	public void testLinkOpenAWindow() {
+		
+		TI_OpeningAWindowPage openAWindow = new TI_OpeningAWindowPage();
+		
+		String response = "";
+		URL url ;
+		url = openAWindow.getOpenAWindowLink().getAttribute("href");
+		HttpURLConnection connection = (HttpURLConnection)url.openConnection(); 
+		try 
+		{ 
+		    connection.connect(); 
+		     response = connection.getResponseMessage();	         
+		    connection.disconnect(); 
+		    return response; 
+		}
+ 
+		catch(Exception exp) 
+		{ 
+			return exp.getMessage(); 
+		}  				
+		
+	}
+}

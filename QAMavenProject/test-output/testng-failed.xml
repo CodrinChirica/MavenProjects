@@ -3,11 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="QATools.QAMavenProject.TI_TestDragAndDropPage">
-        <methods>
-          <include name="testColumnAOverB"/>
-        </methods>
-      </class> <!-- QATools.QAMavenProject.TI_TestDragAndDropPage -->
+      <class name="QATools.QAMavenProject.TI_TestDragAndDropPage"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
@@ -18,7 +14,7 @@
           <include name="navigateToLogin"/>
           <include name="afterTestSuite"/>
           <include name="beforeSuite"/>
-          <include name="goToCheckboxesPage"/>
+          <include name="goToDragAndDropPage"/>
           <include name="afterEachTest"/>
         </methods>
       </class> <!-- QATools.QAMavenProject.TI_TestDragAndDropPage -->

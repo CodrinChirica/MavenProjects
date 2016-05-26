@@ -1,0 +1,33 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+public class TI_FileUploaderPage {
+
+	private WebDriver driver ;
+	
+	@FindBy(how=How.XPATH, using=".//*[@id='file-upload']")
+	private WebElement browseForFileButton;
+	
+	@FindBy(how=How.XPATH, using=".//*[@id='file-submit']")
+	private WebElement submitFileButton;
+	
+	@FindBy(how=How.XPATH, using=".//*[@id='uploaded-files']")
+	private WebElement uploadedFiles;
+	
+	public TI_FileUploaderPage(WebDriver driver){
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public WebElement getBrowseForFileButton() {
+		return browseForFileButton;
+	}
+	
+	
+	
+}

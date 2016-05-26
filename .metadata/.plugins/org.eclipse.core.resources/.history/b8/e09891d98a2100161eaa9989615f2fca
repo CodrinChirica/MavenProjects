@@ -1,0 +1,15 @@
+package QATools.QAMavenProject;
+
+import org.testng.annotations.BeforeMethod;
+
+public class TI_TestOpenAWindowPage extends AbstractLoginTestOnIndexPage{
+
+	
+	@BeforeMethod
+	public void goToKeyPressesPage() {
+		driver.get("https://the-internet.herokuapp.com/windows");		
+	}
+	
+	@Test
+	public void 
+}

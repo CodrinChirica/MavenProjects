@@ -10,7 +10,7 @@ public class TI_TestDropdownListPage extends AbstractLoginTestOnIndexPage{
 
 	
 	@BeforeMethod
-	public void goToCheckboxesPage() {
+	public void goToDropdownPage() {
 		driver.get("https://the-internet.herokuapp.com/dropdown");
 		
 	}

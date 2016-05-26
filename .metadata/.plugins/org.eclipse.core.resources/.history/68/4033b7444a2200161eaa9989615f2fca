@@ -1,0 +1,17 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class TI_StatusCodes {
+
+	private WebDriver driver;
+	
+	private TI_StatusCodes ( WebDriver driver){
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	
+	
+}

@@ -1,0 +1,15 @@
+package QATools.QAMavenProject;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class TI_TestKeyPressesPage extends AbstractLoginTestOnIndexPage{
+
+	@Test
+	public void checkLinkGoToCheckboxesPage () {
+		
+		TI_KeyPressesPage keyPressesPage = new TI_KeyPressesPage(driver);
+		String pressedKey = keyPressesPage.getKeyPressed();
+	}
+	
+}

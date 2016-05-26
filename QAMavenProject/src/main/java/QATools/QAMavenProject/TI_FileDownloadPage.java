@@ -26,11 +26,6 @@ public class TI_FileDownloadPage {
 		someFileToDownload.click();
 	}
 	
-//	public Boolean checkPopUpWindow() {
-//		
-//		String parentWindowHandler = driver.getWindowHandle();
-//
-//	}
 	
 	public Boolean isFileDownloadPageDipsplayed() {
 		

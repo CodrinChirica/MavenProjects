@@ -53,18 +53,12 @@ public class AbstractLoginTestOnIndexPage {
 		}
 		
 		
-		switch (url) {
-		case "https://www.facebook.com/":
-			driver.get("https://www.facebook.com/");
-			break;
-		case "https://the-internet.herokuapp.com/":
-			driver.get("https://the-internet.herokuapp.com/");
-			break;
-		
-		default: throw new IllegalArgumentException("Invalid URL (Facebook): " + url);
-		}
-		
-	  }	
+		if ( url.equals("https://the-internet.herokuapp.com/") || url.equals("https://www.facebook.com/") )
+			driver.get(url);
+		else 
+			throw new IllegalArgumentException("Invalid URL (Facebook): " + url);
+				
+	  	}	
 	
 	
 	private void parseConfigFile (){
@@ -74,7 +68,7 @@ public class AbstractLoginTestOnIndexPage {
 
 		try {
 
-			input = new FileInputStream("C:\\Users\\p3700650\\workspace\\MavenWorkspace\\QAMavenProject\\src\\main\\resources\\config.properties");
+			input = new FileInputStream("src\\main\\resources\\config.properties");
 
 			// load a properties file
 			prop.load(input);

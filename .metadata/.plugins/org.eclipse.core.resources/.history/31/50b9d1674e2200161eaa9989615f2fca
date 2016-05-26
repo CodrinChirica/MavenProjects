@@ -1,0 +1,27 @@
+package QATools.QAMavenProject;
+
+import org.openqa.selenium.Keys;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class TI_TestNotificationMessagePage extends AbstractLoginTestOnIndexPage {
+
+	@BeforeMethod
+	public void goToNotificationMessagePage() {
+		driver.get("https://the-internet.herokuapp.com/notification_message_rendered");		
+	}	
+	
+	@Test
+	public void testNotificationMessage () {
+		
+		TI_KeyPressesPage keyPressesPage = new TI_KeyPressesPage(driver);
+		String keyToPress = Keys.chord(Keys.CONTROL);
+		keyPressesPage.pressKey(keyToPress);
+		
+		String resultKeyPressed = keyPressesPage.getKeyPressed();
+		
+		Assert.assertEquals(resultKeyPressed,"CONTROL");
+	}
+	
+}

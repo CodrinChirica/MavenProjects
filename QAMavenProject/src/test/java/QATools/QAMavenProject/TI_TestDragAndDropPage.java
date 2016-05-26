@@ -1,11 +1,8 @@
 package QATools.QAMavenProject;
 
-import java.io.File;
 import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,7 +11,7 @@ public class TI_TestDragAndDropPage extends AbstractLoginTestOnIndexPage{
 	
 
 	@BeforeMethod
-	public void goToCheckboxesPage() {
+	public void goToDragAndDropPage() {
 		driver.get("https://the-internet.herokuapp.com/drag_and_drop");
 		
 	}
@@ -31,8 +28,6 @@ public class TI_TestDragAndDropPage extends AbstractLoginTestOnIndexPage{
 			System.out.println(testColumnAOverB.getColumnAHeader() + " / " + testColumnAOverB.getColumnBHeader());
 		}		
 		
-		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File("C:\\Users\\p3700650\\image.png"));
 		Assert.assertEquals(resultHeader,testColumnAOverB.getColumnAHeader());
 	}
 	
